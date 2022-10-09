@@ -5,7 +5,7 @@ import useFetch from '../customHooks/useFetch';
 import "../styles/display.css";
 
 const ViewUsers=()=> {
-  const [data]=useFetch("users")
+  const {data,isOffline}=useFetch("users")
 
   const navigate= useNavigate();
 
@@ -13,7 +13,9 @@ const ViewUsers=()=> {
   return (
 <>
     <h2>User Details</h2>
-    <div claasName="navigate-btn-container">
+    <div style={{color:"red", display:isOffline?"block":"none"}}>You are viewing page in offline mode</div>
+
+    <div className="navigate-btn-container">
     <Button className={"navigate-back-btn"} btnTxt={"Back"}  onClick={()=>navigate("/")}/>
 
     </div>
@@ -41,6 +43,8 @@ const ViewUsers=()=> {
 
     </table>
 :"Loading..."}
+
+{console.log("isoffline"," ",isOffline)}
     </div>
     </>  )
 }

@@ -1,21 +1,20 @@
-import React, { useEffect,useState } from 'react';
+import React from 'react';
 import Button from '../reusableComponents/Button';
 import useFetch from '../customHooks/useFetch';
 import { useNavigate } from 'react-router-dom';
 import "../styles/display.css"
 
 const ViewPosts=()=>{
-  const [data]=useFetch("posts")
+  const {data,isOffline}=useFetch("posts")
   
   const navigate= useNavigate();
-
 
 
   return (
     <>
        
     <h2>Posts List</h2>
-    {console.log("data",data)}
+    <div style={{color:"red", visibility:isOffline?"block":"hidden" }}>You are viewing page in offline mode</div>
     <div className="navigate-btn-container">
     <Button className={"navigate-back-btn"} btnTxt={"Back"}  onClick={()=>navigate("/")}/>
     </div>

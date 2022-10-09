@@ -6,7 +6,6 @@ from '../reusableComponents/Button';
 const Home=()=> {
   return (
     <>
-    <div>Welcome to my Marvel World</div>
     <>
     <nav>
       <div>

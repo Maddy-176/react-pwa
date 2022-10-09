@@ -23,27 +23,34 @@ self.addEventListener('install', event => {
 });
 
 
+
+
+
+
 // Cache and return requests
 /* eslint-disable-next-line no-restricted-globals */
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function (event) {
   event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
+    caches.open(CACHE_NAME).then(function (cache) {
+      return cache.match(event.request).then(function (response) {
+        return (
+          response ||
+          fetch(event.request).then(function (response) {
+            cache.put(event.request, response.clone());
+            return response;
+          })
+        );
+      });
+    }),
   );
 });
 
 
 // Update a service worker
  /* eslint-disable-next-line no-restricted-globals */
-self.addEventListener('activate', event => {
+ self.addEventListener('activate', event => {
   var cacheWhitelist = ['pwa-task-manager'];
+  
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
@@ -56,3 +63,5 @@ self.addEventListener('activate', event => {
     })
   );
 });
+
+

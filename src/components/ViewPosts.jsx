@@ -14,7 +14,7 @@ const ViewPosts=()=>{
     <>
        
     <h2>Posts List</h2>
-    <div style={{color:"red", visibility:isOffline?"block":"hidden" }}>You are viewing page in offline mode</div>
+    <div style={{color:"red", display:isOffline?"block":"none" }}>You are viewing page in offline mode</div>
     <div className="navigate-btn-container">
     <Button className={"navigate-back-btn"} btnTxt={"Back"}  onClick={()=>navigate("/")}/>
     </div>

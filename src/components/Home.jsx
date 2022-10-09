@@ -1,36 +1,27 @@
-import React from 'react'
+import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import Button
-
-from '../reusableComponents/Button';
-const Home=()=> {
+import Button from "../reusableComponents/Button";
+const Home = () => {
   return (
     <>
-    <>
-    <nav>
-      <div>
-          <Link to="/users">
-          <Button 
-          btnTxt="View Users"
-          className="route-btn"
-          />
-          </Link>
+      <>
+        <nav>
+          <div>
+            <Link to="/users">
+              <Button btnTxt="View Users" className="route-btn" />
+            </Link>
           </div>
           <div>
-          <Link to="/posts">
-          <Button 
-          btnTxt="View Posts"
-          className="route-btn"
-
-          />
-          </Link>
+            <Link to="/posts">
+              <Button btnTxt="View Posts" className="route-btn" />
+            </Link>
           </div>
-    </nav>
+        </nav>
 
-    <Outlet />
-  </>
-  </>
-  )
-}
+        <Outlet />
+      </>
+    </>
+  );
+};
 
-export default Home
+export default Home;

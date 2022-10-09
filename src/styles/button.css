@@ -1,24 +1,21 @@
-.route-btn{
-    width:20%;
-    border-radius: 10px;
-    margin:2%;
-    color: hwb(240 21% 20%);
-    background-color: rgb(201, 194, 194);
-    border: 1px solid rgb(140, 136, 136);
+.route-btn {
+  width: 20%;
+  border-radius: 10px;
+  margin: 2%;
+  color: hwb(240 21% 20%);
+  background-color: rgb(201, 194, 194);
+  border: 1px solid rgb(140, 136, 136);
 }
 
-.route-btn:hover{
-    background-color: rgb(140, 136, 136);
-    border: 1px solid rgb(76, 74, 74);
-
+.route-btn:hover {
+  background-color: rgb(140, 136, 136);
+  border: 1px solid rgb(76, 74, 74);
 }
 
-.navigate-back-btn{
-    background-color: green;
-    color:white;
-    width:7%;
-    border:1px solid rgb(234, 234, 234);
-    left: auto;
+.navigate-back-btn {
+  background-color: green;
+  color: white;
+  width: 7%;
+  border: 1px solid rgb(234, 234, 234);
+  left: auto;
 }
-
-
